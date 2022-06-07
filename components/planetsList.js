@@ -2,7 +2,7 @@ import React from 'react'
 
 const PlanetsList = () => {
   return (
-    <div>PlanetsList</div>
+    <h2>PlanetsList</h2>
   )
 }
 

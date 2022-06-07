@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: 1px solid red !important; */
 }
 
 :root {
@@ -47,9 +48,11 @@
   /* other variables */
   --borderRadius: 0.25rem;
   --letterSpacing: 1px;
-  --transition: 0.3s ease-in-out all;
+  --transitionIn: 0.2s ease-in all;
+  --transitionOut: 0.2s ease-out all;
   --max-width: 1120px;
   --fixed-width: 600px;
+  --min-width: 350px;
 
   /* box shadow */
   --shadow-300: 0 20px 25px -5px rgb(0 0 0 / 0.1),
@@ -130,6 +133,7 @@ a {
 /* NAVIGATION BAR */
 
 .navbar {
+  width: 100%;
   display: flex;
   align-items: center;
   height: 5rem;
@@ -146,7 +150,7 @@ a {
 .logo-container {
   display: inline-flex;
   align-items: center;
-  height: 100%;
+  height: 95%;
 }
 .logo {
   height: 100%;
@@ -167,17 +171,50 @@ a {
 
 /* INPUT */
 .input-section {
-  margin-top: 8vh;
+  margin: 3rem auto 0;
+  max-width: var(--max-width);
+  height: 200px;
 }
 .input-form {
-  width: 50%;
+  max-width: 50%;
+  min-width: var(--min-width);
   margin: 0 auto;
-  /* display: inline-block; */
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-100);
+  height: 100%;
+  outline: var(--grey-200) solid 0.3px;
+  transition: var(--transitionOut);
 }
-
+.input-form:hover {
+  box-shadow: var(--shadow-300);
+  transition: var(--transitionIn);
+}
 .input-container {
   /* display:block; */
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  height: 90%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  row-gap: 15px;
+}
+
+.input-form label{
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--grey-900);
+}
+
+.input-form input {
+  height: 20%;
+  width: 70%;
+  border: solid 0.5px var(--grey-300);
+  border-radius: var(--borderRadius);
+  font-family: var(--headingFont);
+  padding-left: 10px;
+}
+.input-form input:focus {
+  outline: none;
+  border: solid 0.5px var(--grey-400);
 }
