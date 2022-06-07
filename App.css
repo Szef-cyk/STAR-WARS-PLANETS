@@ -141,6 +141,7 @@ a {
   justify-content: space-between;
   margin: 0 auto;
   width: 85vw;
+  height: 100%;
 }
 .logo-container {
   display: inline-flex;
