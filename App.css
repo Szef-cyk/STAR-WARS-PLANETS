@@ -170,6 +170,7 @@ a {
 }
 
 /* INPUT */
+
 .input-section {
   margin: 3rem auto 0;
   max-width: var(--max-width);
@@ -200,7 +201,7 @@ a {
   row-gap: 15px;
 }
 
-.input-form label{
+.input-form label {
   font-size: 1.5rem;
   text-transform: uppercase;
   color: var(--grey-900);
@@ -217,4 +218,36 @@ a {
 .input-form input:focus {
   outline: none;
   border: solid 0.5px var(--grey-400);
+}
+
+/* PLANETS */
+.planets-section {
+  height: 100vh;
+}
+.planets-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 90vw;
+  margin: 3rem auto;
+  justify-items: center;
+}
+.single-planet-card {
+  height: 30vh;
+  /* min-width: 33%; */
+  /* max-width: 66%; */
+}
+.single-planet-card header {
+  text-align: center;
+}
+.img-container {
+  margin:0 auto;
+  width: 80%;
+}
+
+.img-container img {
+  width: 100%;
+}
+
+.planet-info p{
+  text-align: center;
 }

@@ -1,9 +1,22 @@
-import React from 'react'
+import React from "react";
+import SinglePlanet from "./singlePlanet";
 
 const PlanetsList = () => {
   return (
-    <h2>PlanetsList</h2>
-  )
-}
+    <section className="planets-section">
+      <div className='planets-container'>
+        <SinglePlanet />
+        <SinglePlanet />
+        <SinglePlanet />
+        <SinglePlanet />
+        <SinglePlanet />
+        <SinglePlanet />
+        <SinglePlanet />
+        <SinglePlanet />
+        
+      </div>
+    </section>
+  );
+};
 
-export default PlanetsList
+export default PlanetsList;
