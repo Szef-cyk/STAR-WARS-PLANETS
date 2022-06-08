@@ -134,6 +134,17 @@ a {
   text-decoration: none;
 }
 
+/* LOADING */
+.loading {
+  position: absolute;
+  top:22%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loading h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
 /* NAVIGATION BAR */
 
 .navbar {
@@ -253,7 +264,6 @@ a {
   transition: var(--transitionIn);
   height: 51rem;
   width: 32.64%;
-
 }
 .single-planet-card header {
   text-transform: uppercase;

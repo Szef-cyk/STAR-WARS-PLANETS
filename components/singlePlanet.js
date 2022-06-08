@@ -8,7 +8,7 @@ const SinglePlanet = () => {
         <img src='../images/1.webp' alt='' />
       </div>
       <div className='planet-info'>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
       </div>
     </div>
   );
