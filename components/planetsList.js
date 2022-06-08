@@ -3,7 +3,7 @@ import SinglePlanet from "./singlePlanet";
 
 const PlanetsList = () => {
   return (
-    <section className="planets-section">
+    <section className='planets-section'>
       <div className='planets-container'>
         <SinglePlanet />
         <SinglePlanet />
@@ -12,8 +12,6 @@ const PlanetsList = () => {
         <SinglePlanet />
         <SinglePlanet />
         <SinglePlanet />
-        <SinglePlanet />
-        
       </div>
     </section>
   );

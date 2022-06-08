@@ -19,6 +19,8 @@
   /* main colors */
   --primary-400: #001d3dff;
   --primary-300: #023047ff;
+  --primary-250: #184257;
+
   --primary-200: #219ebcff;
   --primary-100: #8ecae6ff;
   --secondary-400: #fb8500ff;
@@ -55,6 +57,7 @@
   --min-width: 350px;
 
   /* box shadow */
+  --shadow-400: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --shadow-300: 0 20px 25px -5px rgb(0 0 0 / 0.1),
     0 8px 10px -6px rgb(0 0 0 / 0.1);
   --shadow-200: 0 10px 15px -3px rgb(0 0 0 / 0.1),
@@ -76,6 +79,7 @@ body {
   font-family: var(--bodyFont);
   font-weight: 400;
   line-height: 1.75;
+
   color: var(--gray-900);
 }
 
@@ -136,7 +140,7 @@ a {
   width: 100%;
   display: flex;
   align-items: center;
-  height: 5rem;
+  height: 85px;
   background: var(--primary-400);
 }
 .nav-center {
@@ -160,7 +164,7 @@ a {
   justify-content: space-around;
   align-items: center;
   gap: 5rem;
-  margin-right: auto;
+  /* margin-right: auto; */
   margin-left: auto;
 }
 
@@ -222,32 +226,61 @@ a {
 
 /* PLANETS */
 .planets-section {
-  height: 100vh;
+  height: 100%;
 }
 .planets-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 90vw;
+  display: flex;
+  align-items: start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  width: 90%;
   margin: 3rem auto;
-  justify-items: center;
+  justify-content: center;
 }
 .single-planet-card {
-  height: 30vh;
-  /* min-width: 33%; */
-  /* max-width: 66%; */
+  display: flex;
+  flex-flow: column;
+  height: 50rem;
+  width: 32%;
+  box-shadow: var(--shadow-100);
+  /* outline: solid 0.1px var(--grey-200); */
+  background: var(--primary-250);
+  color: var(--secondary-400);
+  transition: var(--transitionOut);
+}
+.single-planet-card:hover {
+  box-shadow: var(--shadow-400);
+  transition: var(--transitionIn);
+  height: 51rem;
+  width: 32.64%;
+
 }
 .single-planet-card header {
+  text-transform: uppercase;
   text-align: center;
+  line-height: 3.2rem;
+  font-size: 2rem;
+  font-weight: 500;
 }
 .img-container {
-  margin:0 auto;
-  width: 80%;
+  margin: 0 auto;
+  width: 85%;
+  height: 75%;
 }
 
 .img-container img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: 30%;
 }
-
-.planet-info p{
+.planet-info {
+  margin: auto;
+  display: block;
+  width: 90%;
+}
+.planet-info p {
   text-align: center;
+  color: var(--secondary-200);
 }
