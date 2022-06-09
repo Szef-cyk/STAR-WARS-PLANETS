@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/Star_Wars_logo.svg";
+import logo from '../images/Star_Wars_logo.svg'
 const Navbar = () => {
   return (
     <nav className='navbar'>

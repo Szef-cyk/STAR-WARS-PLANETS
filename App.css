@@ -135,9 +135,10 @@ a {
 }
 
 /* LOADING */
+
 .loading {
   position: absolute;
-  top:22%;
+  top: 22%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -145,6 +146,7 @@ a {
   text-align: center;
   text-transform: uppercase;
 }
+
 /* NAVIGATION BAR */
 
 .navbar {
@@ -254,16 +256,15 @@ a {
   height: 50rem;
   width: 32%;
   box-shadow: var(--shadow-100);
-  /* outline: solid 0.1px var(--grey-200); */
   background: var(--primary-250);
   color: var(--secondary-400);
   transition: var(--transitionOut);
 }
+
 .single-planet-card:hover {
   box-shadow: var(--shadow-400);
   transition: var(--transitionIn);
-  height: 51rem;
-  width: 32.64%;
+  transform: scale(1.01);
 }
 .single-planet-card header {
   text-transform: uppercase;
@@ -291,6 +292,7 @@ a {
   width: 90%;
 }
 .planet-info p {
+  text-transform: capitalize;
   text-align: center;
   color: var(--secondary-200);
 }

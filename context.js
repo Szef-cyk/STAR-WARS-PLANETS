@@ -1,4 +1,4 @@
-import React, { Children, createContext } from "react";
+import React, { createContext } from "react";
 import { useState, useContext, useEffect } from "react";
 const url = "https://swapi.dev/api/planets/";
 
@@ -8,6 +8,7 @@ const AppProvider = ({ children }) => {
   const [number, setNumber] = useState(0);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [amountOfCards, setAmountOfCards] = useState("");
 
   const fetchData = async function () {
     setLoading(true);
@@ -28,10 +29,12 @@ const AppProvider = ({ children }) => {
       console.log(planetsList);
       setData(planetsList);
       setLoading(false);
-    } else{
-      setLoading(false)
+    } else {
+      setLoading(false);
     }
   };
+
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -42,6 +45,8 @@ const AppProvider = ({ children }) => {
         number,
         data,
         loading,
+        amountOfCards,
+        setAmountOfCards,
         setNumber,
         setData,
       }}

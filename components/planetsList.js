@@ -1,17 +1,15 @@
 import React from "react";
+import { useGlobalContext } from "../context";
 import SinglePlanet from "./singlePlanet";
 
 const PlanetsList = () => {
+  const { data } = useGlobalContext();
   return (
     <section className='planets-section'>
       <div className='planets-container'>
-        <SinglePlanet />
-        <SinglePlanet />
-        <SinglePlanet />
-        <SinglePlanet />
-        <SinglePlanet />
-        <SinglePlanet />
-        <SinglePlanet />
+        {data.map((planet) => {
+          return <SinglePlanet key={planet.id} {...planet}/>;
+        })}
       </div>
     </section>
   );
