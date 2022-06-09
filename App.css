@@ -188,6 +188,11 @@ a {
 
 /* INPUT */
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+    
 .input-section {
   margin: 3rem auto 0;
   max-width: var(--max-width);
