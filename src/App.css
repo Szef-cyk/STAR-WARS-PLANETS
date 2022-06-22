@@ -1,0 +1,324 @@
+/* GLOBAL */
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red !important; */
+}
+
+:root {
+  /* fonts */
+  --headingFont: "Montserrat", sans-serif;
+  --bodyFont: "Montserrat", sans-serif;
+  --smallText: 0.7em;
+  --mediumText: 1.5em;
+
+  /* main colors */
+  --primary-400: #001d3dff;
+  --primary-300: #023047ff;
+  --primary-250: #184257;
+
+  --primary-200: #219ebcff;
+  --primary-100: #8ecae6ff;
+  --secondary-400: #fb8500ff;
+  --secondary-300: #fca442;
+  --secondary-200: #fdc484;
+  --secondary-100: #fee3c5;
+  --rich-black-fogra-29: #000814ff;
+  /* grey */
+  --grey-900: #18181b;
+  --grey-800: #27272a;
+  --grey-700: #3f3f46;
+  --grey-600: #52525b;
+  --grey-500: #6b7280;
+  --grey-400: #9ca3af;
+  --grey-300: #d1d5db;
+  --grey-200: #e5e7eb;
+  --grey-100: #f3f4f6;
+  --grey-50: #f9fafb;
+  /* default colors */
+  --blackColor: #222;
+  --whiteColor: #fff;
+  --redLight: #f8d7da;
+  --redDark: #842029;
+  --greenLight: #d1e7dd;
+  --greenDark: #0f5132;
+
+  /* other variables */
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1px;
+  --transitionIn: 0.2s ease-in all;
+  --transitionOut: 0.2s ease-out all;
+  --max-width: 1120px;
+  --fixed-width: 600px;
+  --min-width: 350px;
+
+  /* box shadow */
+  --shadow-400: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-300: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-200: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-100: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-50: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+/* TYPOGRAPHY */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400");
+
+html {
+  font-size: 100%;
+} /*16px*/
+
+body {
+  background: var(--gray-100);
+  font-family: var(--bodyFont);
+  font-weight: 400;
+  line-height: 1.75;
+
+  color: var(--gray-900);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0 0 1.38rem;
+  font-family: var(--headingFont);
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: capitalize;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+img {
+  display: block;
+}
+
+small,
+.text_small {
+  font-size: var(--smallText);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* LOADING */
+
+.loading {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loading h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* NAVIGATION BAR */
+
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 85px;
+  background: var(--primary-400);
+}
+.nav-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 85vw;
+  height: 100%;
+}
+.logo-container {
+  display: inline-flex;
+  align-items: center;
+  height: 95%;
+}
+.logo {
+  height: 100%;
+}
+.nav-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5rem;
+  /* margin-right: auto; */
+  margin-left: auto;
+}
+
+.nav-btn {
+  color: var(--primary-100);
+  font-size: var(--mediumText);
+}
+
+/* INPUT */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-section {
+  margin: 3rem auto 0;
+  max-width: var(--max-width);
+  height: 200px;
+}
+.input-form {
+  max-width: 50%;
+  min-width: var(--min-width);
+  margin: 0 auto;
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-100);
+  height: 100%;
+  outline: var(--grey-200) solid 0.3px;
+  transition: var(--transitionOut);
+}
+.input-form:hover {
+  box-shadow: var(--shadow-300);
+  transition: var(--transitionIn);
+}
+.input-container {
+  /* display:block; */
+  /* margin: 0 auto; */
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 15px;
+}
+
+.input-form label {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--grey-900);
+}
+
+.input-form input {
+  height: 20%;
+  width: 70%;
+  border: solid 0.5px var(--grey-300);
+  border-radius: var(--borderRadius);
+  font-family: var(--headingFont);
+  padding-left: 10px;
+}
+.input-form input:focus {
+  outline: none;
+  border: solid 0.5px var(--grey-400);
+}
+
+/* PLANETS */
+.planets-section {
+  height: 100%;
+}
+.planets-container {
+  display: flex;
+  align-items: start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 3rem auto;
+  justify-content: center;
+}
+.single-planet-card {
+  display: flex;
+  flex-flow: column;
+  height: 50rem;
+  width: 32%;
+  box-shadow: var(--shadow-100);
+  background: var(--primary-250);
+  color: var(--secondary-400);
+  transition: var(--transitionOut);
+}
+
+.single-planet-card:hover {
+  box-shadow: var(--shadow-400);
+  transition: var(--transitionIn);
+  transform: scale(1.01);
+}
+.single-planet-card header {
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 3.2rem;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.img-container {
+  margin: 0 auto;
+  width: 85%;
+  height: 75%;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* object-position: 30%; */
+}
+.planet-info {
+  margin: auto;
+  display: block;
+  width: 90%;
+}
+.planet-info p {
+  text-transform: capitalize;
+  text-align: center;
+  color: var(--secondary-200);
+}
+
+/* ALERT */
+
+.alert {
+  background-color: var(--redLight);
+  width: 100vw;
+  top: 6rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: fixed;
+  opacity: 80%;
+  z-index: 1;
+}
+
+.alert-text {
+  color: var(--redDark);
+}
