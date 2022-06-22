@@ -1,33 +1,27 @@
 import React from "react";
 import { useGlobalContext } from "../context";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const Input = () => {
   const {
-    amountOfCards,
     setAmountOfCards,
-    typedAmount,
-    setTypedAmount,
+
     setAlert,
   } = useGlobalContext();
 
-  const handleChange = (event) => {
-    setTypedAmount(event.target.value);
-  };
+  const inputRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (typedAmount > 10 || typedAmount < 0) {
+    if (inputRef.current.value > 10 || inputRef.current.value < 0) {
       setAlert(true);
-      setTypedAmount("");
+      setAmountOfCards("");
+      inputRef.current.value = null;
     } else {
-      setAmountOfCards(typedAmount);
+      setAmountOfCards(inputRef.current.value);
+      inputRef.current.value = null;
     }
   };
-
-  useEffect(() => {
-    setTypedAmount("");
-  }, [amountOfCards]);
 
   return (
     <section className='input-section'>
@@ -35,10 +29,9 @@ const Input = () => {
         <div className='input-container'>
           <label>Wygeneruj Planety Mordo</label>
           <input
+            ref={inputRef}
             type='number'
             placeholder='How many planets do you want to generate? (1-10)'
-            value={typedAmount}
-            onChange={handleChange}
           />
         </div>
       </form>
