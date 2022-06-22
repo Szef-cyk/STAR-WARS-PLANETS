@@ -1,6 +1,6 @@
 import React from "react";
 import { useGlobalContext } from "../context";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 const Input = () => {
   const {
