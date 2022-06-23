@@ -25,7 +25,7 @@ const AppProvider = ({ children }) => {
           climate,
           terrain,
           period: orbital_period,
-          id: results.indexOf(planet),
+          id: results.indexOf(planet)+1,
         };
       });
       setData(planetsList);

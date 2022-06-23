@@ -344,18 +344,6 @@ input::-webkit-inner-spin-button {
 
 /* BUTTONS */
 .btn {
-  /* background-color: var(--primary-300);
-  color: var(--secondary-200);
-  text-transform: uppercase;
-  letter-spacing: var(--mainSpacing);
-  border: 2px solid var(--primaryColor);
-  padding: 0.45rem 0.8rem;
-  display: inline-block;
-  transition: var(--mainTransition);
-  cursor: pointer;
-  font-size: 0.8rem;
-  border-radius: var(--borderRadius);
-  display: inline-block; */
   border-radius: 40px;
   border: 0;
   cursor: pointer;
@@ -371,5 +359,4 @@ input::-webkit-inner-spin-button {
   top: 1rem;
   position: relative;
   font-family: var(--headingFont);
-  
 }

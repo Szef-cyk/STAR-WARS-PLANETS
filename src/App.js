@@ -6,6 +6,7 @@ import Loading from "./pages/loading";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
+import PlanetCard from "./pages/PlanetCard";
 function App() {
   const { loading } = useGlobalContext();
 
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
+          <Route path='/planetcard/:id' element={<PlanetCard />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       )}
