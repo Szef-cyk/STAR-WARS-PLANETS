@@ -55,8 +55,8 @@ const PlanetCard = () => {
     <>
       <Navbar />
       <h2>planet you chose</h2>
+      {name}
       <Link to='/'>
-        {name}
         <button className='btn'>Go back</button>
       </Link>
     </>
