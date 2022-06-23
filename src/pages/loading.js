@@ -1,10 +1,13 @@
 import React from "react";
-
+import Navbar from "../components/navbar";
 const Loading = () => {
   return (
-    <div className='loading'>
-      <h3>Loading....</h3>
-    </div>
+    <>
+      <Navbar />
+      <div className='loading'>
+        <h3>Loading....</h3>
+      </div>
+    </>
   );
 };
 

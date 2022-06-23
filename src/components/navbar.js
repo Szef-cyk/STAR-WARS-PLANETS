@@ -8,10 +8,10 @@ const Navbar = () => {
           <img src={logo} alt='' className='logo' />
         </div>
         <div className='nav-buttons'>
-          <a className='nav-btn' href=''>
+          <a className='nav-btn' href='/'>
             Home
           </a>
-          <a className='nav-btn' href='../pages/about.js'>
+          <a className='nav-btn' href='/about'>
             About
           </a>
         </div>

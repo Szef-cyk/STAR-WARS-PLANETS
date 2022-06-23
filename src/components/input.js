@@ -32,7 +32,7 @@ const Input = () => {
             onWheel={(e) => e.target.blur()}
             ref={inputRef}
             type='number'
-            placeholder='How many planets do you want to generate? (1-10)'
+            placeholder='How many planets do you want to generate?'
           />
         </div>
       </form>
