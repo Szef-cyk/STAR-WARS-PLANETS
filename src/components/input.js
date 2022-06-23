@@ -29,6 +29,7 @@ const Input = () => {
         <div className='input-container'>
           <label>Wygeneruj Planety Mordo</label>
           <input
+            onWheel={(e) => e.target.blur()}
             ref={inputRef}
             type='number'
             placeholder='How many planets do you want to generate? (1-10)'

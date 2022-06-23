@@ -1,31 +1,27 @@
-import React from "react";
 import "./App.css";
-import PlanetsList from "./components/planetsList";
-import Navbar from "./components/navbar";
-import Input from "./components/input";
-import Loading from "./pages/loading";
+import React from "react";
 import { useGlobalContext } from "./context";
-import Alert from "./components/alert";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/navbar";
+import Loading from "./pages/loading";
+import Home from "./pages/Home";
 
 function App() {
-  const {  loading, alert } = useGlobalContext();
+  const { loading } = useGlobalContext();
 
-  if (loading) {
-    return (
-      <>
-        <Navbar />
-        <Loading />
-      </>
-    );
-  }
   return (
-    <>
-      {alert && <Alert />}
-      <Navbar />
-      <Input />
-      <PlanetsList />
-      <footer></footer>
-    </>
+    <Router>
+      {loading ? (
+        <>
+          <Loading />
+        </>
+      ) : (
+        <>
+          <Home />
+        </>
+      )}
+      ;
+    </Router>
   );
 }
 
