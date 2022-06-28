@@ -1,5 +1,5 @@
 import React, { createContext } from "react";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 const url = "https://swapi.dev/api/planets/";
 
 const AppContext = createContext();
@@ -11,7 +11,8 @@ const AppProvider = ({ children }) => {
   const [amountOfCards, setAmountOfCards] = useState("");
   const [typedAmount, setTypedAmount] = useState("");
   const [alert, setAlert] = useState(false);
-
+  const [newData, setNewData] = useState([]);
+  const inputRef = useRef(null);
   const fetchData = async function () {
     setLoading(true);
     const response = await fetch(url);
@@ -25,7 +26,7 @@ const AppProvider = ({ children }) => {
           climate,
           terrain,
           period: orbital_period,
-          id: results.indexOf(planet)+1,
+          id: results.indexOf(planet) + 1,
         };
       });
       setData(planetsList);
@@ -44,10 +45,13 @@ const AppProvider = ({ children }) => {
       value={{
         number,
         data,
+        newData,
         loading,
         amountOfCards,
         typedAmount,
         alert,
+        inputRef,
+        setNewData,
         setAlert,
         setTypedAmount,
         setAmountOfCards,

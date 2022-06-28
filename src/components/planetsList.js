@@ -1,27 +1,34 @@
 import React from "react";
+import { useEffect } from "react";
 import { useGlobalContext } from "../context";
 import SinglePlanet from "./singlePlanet";
 
 const PlanetsList = () => {
-  const { data, amountOfCards } = useGlobalContext();
+  const {
+    data,
+    amountOfCards,
+    setNewData,
+    newData,
+    setAmountOfCards,
+    inputRef,
+  } = useGlobalContext();
 
-  function shuffle(array) {
-    let currentIndex = array.length,
-      randomIndex;
+  const randomizeShufflomize = () => {
+    const d = data
+      .sort(() => (Math.random() > 0.5 ? 1 : -1))
+      .slice(0, amountOfCards);
+    setNewData(d);
+  };
 
-    while (currentIndex != 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
+  useEffect(() => {
+    if (!data?.length || newData.length) return;
+    randomizeShufflomize();
+  }, [amountOfCards]);
 
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex],
-        array[currentIndex],
-      ];
-    }
-    return array;
-  }
-
-  const newData = shuffle(data).slice(0, amountOfCards);
+  useEffect(() => {
+    if (parseInt(amountOfCards) === newData.length) return;
+    randomizeShufflomize();
+  }, [amountOfCards]);
 
   return (
     <section className='planets-section'>

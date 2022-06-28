@@ -1,15 +1,10 @@
 import React from "react";
 import { useGlobalContext } from "../context";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 const Input = () => {
-  const {
-    setAmountOfCards,
-
-    setAlert,
-  } = useGlobalContext();
-
-  const inputRef = useRef(null);
+  const { setAmountOfCards, setAlert, inputRef, amountOfCards } =
+    useGlobalContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
