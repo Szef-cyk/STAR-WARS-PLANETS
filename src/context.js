@@ -12,7 +12,9 @@ const AppProvider = ({ children }) => {
   const [typedAmount, setTypedAmount] = useState("");
   const [alert, setAlert] = useState(false);
   const [newData, setNewData] = useState([]);
+  const [engage, setEngage] = useState(false)
   const inputRef = useRef(null);
+  
   const fetchData = async function () {
     setLoading(true);
     const response = await fetch(url);
@@ -51,6 +53,8 @@ const AppProvider = ({ children }) => {
         typedAmount,
         alert,
         inputRef,
+        engage,
+        setEngage,
         setNewData,
         setAlert,
         setTypedAmount,

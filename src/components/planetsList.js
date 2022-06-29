@@ -9,8 +9,7 @@ const PlanetsList = () => {
     amountOfCards,
     setNewData,
     newData,
-    setAmountOfCards,
-    inputRef,
+    engage
   } = useGlobalContext();
 
   const randomizeShufflomize = () => {
@@ -21,14 +20,9 @@ const PlanetsList = () => {
   };
 
   useEffect(() => {
-    if (!data?.length || newData.length) return;
+    if (!data.length || newData.length) return;
     randomizeShufflomize();
-  }, [amountOfCards]);
-
-  useEffect(() => {
-    if (parseInt(amountOfCards) === newData.length) return;
-    randomizeShufflomize();
-  }, [amountOfCards]);
+  }, [engage]);
 
   return (
     <section className='planets-section'>

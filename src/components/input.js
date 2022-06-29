@@ -1,18 +1,19 @@
 import React from "react";
 import { useGlobalContext } from "../context";
-import { useRef, useEffect } from "react";
 
 const Input = () => {
-  const { setAmountOfCards, setAlert, inputRef, amountOfCards } =
+  const { setAmountOfCards, setAlert, inputRef, setNewData, setEngage, engage } =
     useGlobalContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setNewData([]);
     if (inputRef.current.value > 10 || inputRef.current.value < 0) {
       setAlert(true);
       setAmountOfCards("");
       inputRef.current.value = null;
     } else {
+      setEngage(!engage)
       setAmountOfCards(inputRef.current.value);
       inputRef.current.value = null;
     }
